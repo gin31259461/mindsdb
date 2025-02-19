@@ -8,6 +8,8 @@ install uv package manager
 # create virtual environment
 python -m venv .venv
 
+# activate environment
+
 # for linux
 source .venv/bin/activate
 
@@ -26,6 +28,8 @@ install mindsdb with its local development dependencies
 uv pip install -e .
 uv pip install -r requirements/requirements-dev.txt
 ```
+
+activate environment again!!
 
 ## Run
 
