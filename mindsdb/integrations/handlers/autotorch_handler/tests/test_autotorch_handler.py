@@ -16,24 +16,20 @@ from mindsdb.migrations import migrate
 migrate.migrate_to_head()
 
 import mindsdb.interfaces.storage.db as db
-from mindsdb.integrations.handlers.lightwood_handler.lightwood_handler.lightwood_handler import (
-    LightwoodHandler,
-)
+from mindsdb.integrations.handlers.lightwood_handler.lightwood_handler import \
+    LightwoodHandler
 from mindsdb.integrations.libs.response import RESPONSE_TYPE
-from mindsdb.integrations.utilities.test_utils import (
-    PG_CONNECTION_DATA,
-    PG_HANDLER_NAME,
-)
+from mindsdb.integrations.utilities.test_utils import (PG_CONNECTION_DATA,
+                                                       PG_HANDLER_NAME)
 from mindsdb.interfaces.database.integrations import integration_controller
 from mindsdb.interfaces.model.model_controller import ModelController
-
 # from mindsdb.integrations.handlers.lightwood_handler.lightwood_handler.utils import load_predictor
 from mindsdb.interfaces.storage.fs import FsStore
 from mindsdb.utilities.config import Config
 
 
 # TODO: drop all models and tables when closing tests
-class SQLPredictorHandlerTest(unittest.TestCase):
+class AutoTorchHandler(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # region create permanent integrations
@@ -44,10 +40,7 @@ class SQLPredictorHandlerTest(unittest.TestCase):
             db.session.add(integration_record)
             db.session.commit()
         integration_record = db.Integration(
-            name=PG_HANDLER_NAME,
-            data=PG_CONNECTION_DATA,
-            engine="postgres",
-            company_id=None,
+            name=PG_HANDLER_NAME, data=PG_CONNECTION_DATA, engine="postgres", company_id=None
         )
         db.session.add(integration_record)
         db.session.commit()
@@ -56,10 +49,7 @@ class SQLPredictorHandlerTest(unittest.TestCase):
         handler_controller = integration_controller
 
         cls.handler = LightwoodHandler(
-            "lightwood",
-            handler_controller=handler_controller,
-            fs_store=FsStore(),
-            model_controller=ModelController(),
+            "lightwood", handler_controller=handler_controller, fs_store=FsStore(), model_controller=ModelController()
         )
         cls.config = Config()
 
@@ -266,4 +256,3 @@ class SQLPredictorHandlerTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(failfast=True)
-
