@@ -42,7 +42,7 @@ class NumpyJSONEncoder(json.JSONEncoder):
             return super().default(obj)
 
 
-class AutotorchHandler(BaseMLEngine):
+class AutoTorchHandler(BaseMLEngine):
     name = "autotorch"
 
     @staticmethod
@@ -97,7 +97,7 @@ class AutotorchHandler(BaseMLEngine):
 
         with profiler.Context("load model"):
             predictor_path = self.model_storage.fileStorage.folder_path / self.model_storage.fileStorage.folder_name
-            predictor = AutotorchHandler.get_predictor(predictor_path, predictor_code)
+            predictor = AutoTorchHandler.get_predictor(predictor_path, predictor_code)
 
         dtype_dict = predictor.dtype_dict
 

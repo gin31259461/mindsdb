@@ -4,14 +4,14 @@ from .__about__ import __description__ as description
 from .__about__ import __version__ as version
 
 try:
-    from .autotorch_handler import AutotorchHandler as Handler
+    from .autotorch_handler import AutoTorchHandler as Handler
 
     import_error = None
 except Exception as e:
     Handler = None
     import_error = e
 
-title = "Autotorch"
+title = "AutoTorch"
 name = "autotorch"
 type = HANDLER_TYPE.ML
 icon_path = "icon.svg"
