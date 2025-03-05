@@ -5,14 +5,17 @@
   },
   "api": {
     "http": {
-      "host": "10.22.22.97",
+      "host": "127.0.0.1",
       "port": "47334"
     },
     "mysql": {
-      "host": "10.22.22.97",
+      "host": "127.0.0.1",
       "port": "47335",
       "database": "mindsdb",
       "ssl": true
     }
+  },
+  "paths": {
+    "root": "E:/mindsdb/var"
   }
 }

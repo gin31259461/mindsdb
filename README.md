@@ -34,5 +34,5 @@ activate environment again!!
 ## Run
 
 ```bash
-python -m mindsdb --config config.json
+python -m mindsdb --config config.json --no_studio
 ```

@@ -19,3 +19,4 @@ minds_endpoint
 web
 langchain            # For agents & completions
 mssql
+lightwood

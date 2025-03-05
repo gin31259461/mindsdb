@@ -12,6 +12,7 @@ from enum import Enum
 from packaging import version
 from dataclasses import dataclass, field
 from typing import Callable, Optional, Tuple, List
+from dotenv import load_dotenv
 
 from sqlalchemy.orm.attributes import flag_modified
 
@@ -211,6 +212,8 @@ def do_clean_process_marks():
 
 
 if __name__ == '__main__':
+    load_dotenv()
+
     # warn if less than 1Gb of free RAM
     if psutil.virtual_memory().available < (1 << 30):
         logger.warning(
