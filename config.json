@@ -5,11 +5,11 @@
   },
   "api": {
     "http": {
-      "host": "127.0.0.1",
+      "host": "10.21.20.205",
       "port": "47334"
     },
     "mysql": {
-      "host": "127.0.0.1",
+      "host": "10.21.20.205",
       "port": "47335",
       "database": "mindsdb",
       "ssl": true

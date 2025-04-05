@@ -36,3 +36,13 @@ activate environment again!!
 ```bash
 python -m mindsdb --config config.json --no_studio
 ```
+
+## Run MindsDB in Docker
+
+<!-- markdownlint-disable MD013 -->
+
+```bash
+docker pull mindsdb/mindsdb:v24.10.3.0
+
+docker run --name sqlpredictor -v mdb_data:/root -p 47334:47334 -p 47335:47335 -p 47336:47336  mindsdb/mindsdb:v24.10.3.0 
+```
