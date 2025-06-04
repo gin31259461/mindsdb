@@ -13,9 +13,13 @@
       "port": "47335",
       "database": "mindsdb",
       "ssl": true
+    },
+    "mcp": {
+      "host": "10.21.20.205",
+      "port": "47337"
     }
   },
   "paths": {
-    "root": "E:/mindsdb/var"
+    "root": "C:/mindsdb/var"
   }
 }
